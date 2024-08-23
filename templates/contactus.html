@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - YouTube Analysis Project</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff0099, #493240, #6a11cb, #2575fc); /* Rainbow gradient background */
+            color: #f5f5f5; /* Light text color */
+            margin: 0;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff0099, #493240, #6a11cb, #2575fc); /* Rainbow gradient background */
+            padding: 1.5rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
+
+        header:hover {
+            background: linear-gradient(135deg, #493240, #6a11cb, #2575fc, #ff0099); /* Reversed gradient on hover */
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
+            color: #f5f5f5;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #ffeb3b; /* Yellow underline */
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        main {
+            padding: 6rem 2rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .contact-container h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for text */
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #ffeb3b; /* Yellow text for labels */
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #333;
+            border: none;
+            border-radius: 8px;
+            color: #f5f5f5;
+            font-size: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            transform: translateY(-3px); /* Slight lift effect */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Enhanced shadow on focus */
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        .submit-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(145deg, #ff0099, #493240, #6a11cb, #2575fc); /* Gradient background for buttons */
+            color: #f5f5f5;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+            transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background: linear-gradient(145deg, #493240, #6a11cb, #2575fc, #ff0099); /* Reversed gradient on hover */
+            transform: translateY(-3px); /* Slight lift effect */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+        }
+
+        .contact-details {
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .contact-details p {
+            margin-bottom: 0.8rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #ff0099, #493240, #6a11cb, #2575fc); /* Rainbow gradient background */
+            color: #f5f5f5;
+            text-align: center;
+            padding: 1.5rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/analytical">YouTube Analytics</a></li>
+                <li><a href="/predict">Like Predictor</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-container">
+            <h2>Contact Us</h2>
+            <form action="/contact" method="post">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email ID</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" placeholder="Enter your address" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+            <div class="contact-details">
+                <p><strong>Phone:</strong> +91-123-456-7890</p>
+                <p><strong>Email:</strong> youremail@example.com</p>
+                <p><strong>Office Address:</strong> 123 Main Street, Hyderabad, India</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 YouTube Analysis Project. All rights reserved.</p>
+    </footer>
+</body>
+</html>

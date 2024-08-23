@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - YouTube Analysis Project</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff0099, #493240, #6a11cb, #2575fc); /* Rainbow gradient background */
+            color: #f5f5f5; /* Light text color */
+            margin: 0;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff0099, #493240, #6a11cb, #2575fc); /* Rainbow gradient background */
+            padding: 1.5rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
+
+        header:hover {
+            background: linear-gradient(135deg, #493240, #6a11cb, #2575fc, #ff0099); /* Reversed gradient on hover */
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
+            color: #f5f5f5;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #ffeb3b; /* Yellow underline */
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        main {
+            padding: 6rem 2rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .analytics-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .analytics-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for text */
+        }
+
+        .tableauPlaceholder {
+            width: 100%;
+            height: 850px; /* Adjust as necessary */
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .tableauPlaceholder object {
+            width: 100% !important;
+            height: 100% !important;
+            border: none;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #ff0099, #493240, #6a11cb, #2575fc); /* Rainbow gradient background */
+            color: #f5f5f5;
+            text-align: center;
+            padding: 1.5rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/predict">Like Predictor</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="analytics-container">
+            <h2>Analytics Dashboard</h2>
+            <div class='tableauPlaceholder' id='viz1724404959762'>
+                <noscript>
+                    <a href='#'>
+                        <img alt='Tableau Dashboard' src='https://public.tableau.com/static/images/Pa/PaidMediaDashboard/PaidMediaTemplateConversions/1_rss.png' style='border: none' />
+                    </a>
+                </noscript>
+                <object class='tableauViz'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='PaidMediaDashboard/PaidMediaTemplateConversions' />
+                    <param name='tabs' value='yes' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https://public.tableau.com/static/images/Pa/PaidMediaDashboard/PaidMediaTemplateConversions/1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en-US' />
+                </object>
+            </div>
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1724404959762');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                if (divElement.offsetWidth > 800) {
+                    vizElement.style.width = '1000px';
+                    vizElement.style.height = '850px';
+                } else if (divElement.offsetWidth > 500) {
+                    vizElement.style.width = '1000px';
+                    vizElement.style.height = '850px';
+                } else {
+                    vizElement.style.minWidth = '325px';
+                    vizElement.style.maxWidth = '100%';
+                    vizElement.style.height = '2000px';
+                }
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 YouTube Analysis Project. All rights reserved.</p>
+    </footer>
+</body>
+</html>
