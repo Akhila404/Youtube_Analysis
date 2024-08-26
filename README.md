@@ -1,10 +1,10 @@
-## YouTube Analysis Project:-
+# YouTube Analysis Project:-
 
 This project is a comprehensive analysis and prediction tool designed to provide insights into YouTube videos. The tool is developed using Flask and integrates various data analytics and machine learning techniques to predict the number of likes a YouTube video might receive based on specific input features such as views, dislikes, comment counts, and genre.
 
 The project also includes a Tableau dashboard for visualizing data, making it a powerful resource for anyone looking to understand or predict video performance on YouTube.
 
-#### Features:
+### Features:
 **Home Page:**
 A welcoming interface that provides navigation to various sections of the application.
 
@@ -24,7 +24,7 @@ Displays the predicted number of likes based on the input provided by the user.
 A confirmation page that acknowledges the user after they've made contact through the form.
 
 
-#### Pages Overview:
+### Pages Overview:
 **home.html:** 
 The landing page with navigation links to other sections like YouTube Analysis, Like Predictor, and Contact Us.
 
@@ -41,10 +41,10 @@ After the user submits data on the Like Predictor page, this page displays the p
 Redirects users here after submitting a contact form, with a message stating that they will receive a response within 24 hours.
 
 
-#### Deployment:--
+### Deployment:--
 The project is deployed on Render.com, making it accessible for live demonstrations and use. You can access the live application using the following link: https://youtube-analysis-siy6.onrender.com
 
-#### How to Use?
+### How to Use?
 **Navigate to the Home Page:** Explore the different sections.
 
 **Use the Like Predictor:** Input relevant data and click submit to see the predicted likes.
@@ -54,7 +54,7 @@ The project is deployed on Render.com, making it accessible for live demonstrati
 **Contact Us:** Submit any inquiries and receive a confirmation message.
 
 
-#### Project Structure:--
+### Project Structure:--
 **app.py:** The main Flask application script.
 
 **templates/:** Directory containing all HTML files including home.html, contactus.html, likePredictor.html, result.html, and thankyou.html.
